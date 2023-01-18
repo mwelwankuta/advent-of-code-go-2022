@@ -3,37 +3,15 @@
 package dayone
 
 import (
-	"fmt"
-	"io/ioutil"
-	"os"
-	"path/filepath"
 	"sort"
 	"strconv"
 	"strings"
+
+	"github.com/mwelwankuta/advent-of-code-go-2022/internal/question"
 )
 
 type Question struct {
-	File    string // Name of the file with input data
-	PartOne int    // Value of the total calories by the elf with the most
-	PartTwo int    // Value of the total calories by the
-}
-
-// LoadInput(fileName string)
-// stores in memory the data from a given file
-// e.g LoadInput("input.txt")
-// the function searches the current directory for a file and panics when non is found
-func (q *Question) LoadInput(fileName string) {
-	filePath, err := filepath.Abs(filepath.Dir(os.Args[0]))
-	if err != nil {
-		panic(err)
-	}
-
-	file, err := ioutil.ReadFile(fmt.Sprintf("%v/dayone/%v", filePath, fileName))
-	if err != nil {
-		panic(err)
-	}
-
-	q.File = string(file)
+	question.Question
 }
 
 // max(a, b string)

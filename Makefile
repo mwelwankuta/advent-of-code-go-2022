@@ -1,3 +1,8 @@
+dev:
+	make build
+	make run
+build:
+	rm ./bin/advent-of-code
+	go build -o ./bin/advent-of-code ./cmd/main.go 
 run:
-	go build main.go
-	./main
+	./bin/advent-of-code
